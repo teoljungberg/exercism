@@ -27,6 +27,10 @@ class Exercism
       get_and_save('user/assignments/next')
     end
 
+    def peep
+      get_and_save('user/assignments/upcomming')
+    end
+
     def submit(filename)
       path = File.join(filename)
       contents = File.read path

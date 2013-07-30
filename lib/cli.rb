@@ -46,6 +46,15 @@ class Exercism
       report(assignments)
     end
 
+    desc "peep", "Fetch N upcoming assignments from exercism.io"
+    method_option :host, :aliases => '-h', :default => 'http://exercism.io', :desc => 'the url of the exercism application'
+    def peep
+      require 'exercism'
+
+      assignments = api.peep
+      report(assignments)
+    end
+
     desc "submit FILE", "Submit code to exercism.io on your current assignment"
     method_option :host, :aliases => '-h', :default => 'http://exercism.io', :desc => 'the url of the exercism application'
     def submit(file)
